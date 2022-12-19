@@ -43,5 +43,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dscalzi/HeliosLauncher.git"
+  },
+  "devDependencies": {
+    "electron": "^22.0.0"
   }
 }
