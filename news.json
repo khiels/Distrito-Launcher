@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Pikachu",
+        "description": "Enchendo a cara",
+        "imageURL": "https://media.discordapp.net/attachments/699351519740428398/1018239560905396324/pika-fococlipping-standard.png",
+        "link": "https://www.google.com"
+    },
+    {
+        "title": "Titulo foda",
+        "description": "Descrição mais foda ainda",
+        "imageURL": null,
+        "link": null
+    },
+    {
+        "title": "Pixelmon Brasil",
+        "description": "Descubra mundos enormes sem fronteiras cheios de diversão e milhões de amigos.",
+        "imageURL": null,
+        "link": "https://www.google.com"
+    }
+]

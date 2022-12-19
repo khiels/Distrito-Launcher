@@ -1,0 +1,44 @@
+<div id="loginContainer" style="display: none;">
+    <div id="loginCancelContainer" style="display: none;">
+        <button id="loginCancelButton">
+            <div id="loginCancelIcon">X</div>
+            <span id="loginCancelText">Cancelar</span>
+        </button>
+    </div>
+    <div id="loginContent">
+        <form id="loginForm">
+            <span id="loginSubheader">MOJANG LOGIN</span>
+            <div class="loginFieldContainer">
+                <span class="loginErrorSpan" id="loginEmailError">* Valor inválido</span>
+                <input id="loginUsername" class="loginField" type="text" placeholder="Email ou nome de usuário"/>
+            </div>
+            <div class="loginFieldContainer">
+                <span class="loginErrorSpan" id="loginPasswordError">* Obrigatório</span>
+                <input id="loginPassword" class="loginField" type="password" placeholder="Senha"/>
+            </div>
+            <button id="loginButton" disabled>
+                <div id="loginButtonContent">
+                    INICIAR SESSÃO
+                    <div class="circle-loader">
+                        <div class="checkmark draw"></div>
+                    </div>
+                    <!--<div class="spinningCircle" id="loginSpinner"></div>-->
+                </div>
+            </button>
+            <div id="loginOptions">
+                <span class="loginSpanDim">
+                    <a href="https://minecraft.net/password/forgot/">Esqueceu sua senha?</a>
+                </span>
+                <label id="checkmarkContainer">
+                    <input id="loginRememberOption" type="checkbox" checked>
+                    <span id="loginRememberText" class="loginSpanDim">Manter conectado?</span>
+                    <span class="loginCheckmark"></span>
+                </label>
+            </div>
+            <div id="loginDisclaimer">
+                <p class="loginDisclaimerText">Seus dados são enviados diretamente para a Mojang e nunca são armazenada. O Pixelmon Blast não é afiliada à Mojang AB.</p>
+            </div>
+        </form>
+    </div>
+    <script src="./assets/js/scripts/login.js"></script>
+</div>

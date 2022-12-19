@@ -1,0 +1,379 @@
+<div id="settingsContainer" style="display: none;">
+    <div id="settingsContainerLeft">
+        <div id="settingsNavContainer">
+            <div id="settingsNavHeader">
+                <span id="settingsNavHeaderText">CONFIGURAÇÕES</span>
+            </div>
+            <div id="settingsNavItemsContainer">
+                <div id="settingsNavItemsContent">
+                    <button class="settingsNavItem" rSc="settingsTabAccount" id="settingsNavAccount" selected>CONTA</button>
+                    <button class="settingsNavItem" rSc="settingsTabMinecraft">MINECRAFT</button>
+                    <button class="settingsNavItem" rSc="settingsTabMods">MODS</button>
+                    <button class="settingsNavItem" rSc="settingsTabJava">JAVA</button>
+                    <button class="settingsNavItem" rSc="settingsTabLauncher">INICIALIZADOR</button>
+                    <div class="settingsNavSpacer"></div>
+                    <button class="settingsNavItem" rSc="settingsTabAbout">SOBRE</button>
+                    <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">ATUALIZAÇÕES</button>
+                    <div id="settingsNavContentBottom">
+                        <div class="settingsNavDivider"></div>
+                        <button id="settingsNavDone">VOLTAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="settingsContainerRight">
+        <div id="settingsTabAccount" class="settingsTab">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText">CONFIGURAÇÕES DA CONTA</span>
+                <span class="settingsTabHeaderDesc">Adicionar novas contas ou gerenciar contas existentes</span>
+            </div>
+            <div class="settingsAuthAccountTypeContainer">
+                <div class="settingsAuthAccountTypeHeader">
+                    <div class="settingsAuthAccountTypeHeaderLeft">
+                        <i class="cib-microsoft accountTypeIcon"></i>
+                        <span>Microsoft</span>
+                    </div>
+                    <div class="settingsAuthAccountTypeHeaderRight">
+                        <button class="settingsAddAuthAccount" id="settingsAddMicrosoftAccount">Adicionar conta microsoft</button>
+                    </div>
+                </div>
+                
+                <div class="settingsCurrentAccounts" id="settingsCurrentMicrosoftAccounts">
+                    <!-- Microsoft auth accounts populated here. -->
+                </div>
+            </div>
+
+            <div class="settingsAuthAccountTypeContainer">
+                <div class="settingsAuthAccountTypeHeader">
+                    <div class="settingsAuthAccountTypeHeaderLeft">
+                        <i class="cib-mojang accountTypeIcon"></i>
+                        <span>Mojang</span>
+                    </div>
+                    <div class="settingsAuthAccountTypeHeaderRight">
+                        <button class="settingsAddAuthAccount" id="settingsAddMojangAccount">Adicionar conta mojang</button>
+                    </div>
+                </div>
+                
+                <div class="settingsCurrentAccounts" id="settingsCurrentMojangAccounts">
+                    <!-- Mojang auth accounts populated here. -->
+                </div>
+            </div>
+            <div class="settingsAuthAccountTypeContainer">
+                <div class="settingsAuthAccountTypeHeader">
+                    <div class="settingsAuthAccountTypeHeaderLeft">
+                        <img class="accountTypeIcon invertColor" src="./assets/images/skull.png">
+                        <span>Contas não autenticadas</span>
+                    </div>
+                    <div class="settingsAuthAccountTypeHeaderRight">
+                        <button class="settingsAddAuthAccount" id="settingsAddAccount">Adicionar conta</button>
+                    </div>
+                </div>
+                
+                <div class="settingsCurrentAccounts" id="settingsCurrentOfflineAccounts">
+                    <!-- Offline accounts populated here. -->
+                </div>
+            </div>
+        </div>
+        <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText">CONFIGURAÇÕES DO MINECRAFT</span>
+                <span class="settingsTabHeaderDesc">Opções relacionas ao inicializador</span>
+            </div>
+            <div id="settingsGameResolutionContainer">
+                <span class="settingsFieldTitle">Resolução do jogo</span>
+                <div id="settingsGameResolutionContent">
+                    <input type="number" id="settingsGameWidth" min="0" cValue="GameWidth">
+                    <div id="settingsGameResolutionCross">&#10006;</div>
+                    <input type="number" id="settingsGameHeight" min="0" cValue="GameHeight">
+                </div>
+            </div>
+            <span class="settingsFieldTitle">Outros</span>
+            <div style="padding-top: 10px;">
+                <div class="settingsFieldContainer">
+                    <div class="settingsFieldLeft">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="Fullscreen">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <span class="settingsFieldLabel">Iniciar em tela cheia</span>
+                    </div>
+                </div>
+                <div class="settingsFieldContainer">
+                    <div class="settingsFieldLeft">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="AutoConnect">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <span class="settingsFieldLabel">Conectar ao servidor automaticamente ao iniciar</span>
+                    </div>
+                </div>
+                <div class="settingsFieldContainer">
+                    <div class="settingsFieldLeft">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="LaunchDetached">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <span class="settingsFieldLabel">Iniciar o processo do jogo desanexado do launcher</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="settingsTabMods" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText">CONFIGURAÇÕES DOS MODS</span>
+                <span class="settingsTabHeaderDesc">Habilitar ou desabilitar mods</span>
+            </div>
+            <div id="settingsSelServContainer">
+                <div id="settingsSelServContent">
+
+                </div>
+                <div id="settingsSwitchServerContainer">
+                    <div id="settingsSwitchServerContent">
+                        <button id="settingsSwitchServerButton">Alternar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="settingsModsContainer">
+                <div id="settingsReqModsContainer">
+                    <div class="settingsModsHeader">Mods necessários</div>
+                    <div id="settingsReqModsContent">
+
+                    </div>
+                </div>
+                <div id="settingsOptModsContainer">
+                    <div class="settingsModsHeader">Mods opcionais</div>
+                    <div id="settingsOptModsContent">
+                        
+                    </div>
+                </div>
+                <div id="settingsDropinModsContainer">
+                    <div class="settingsModsHeader">Arrastar mods</div>
+                    <button id="settingsDropinFileSystemButton">
+                        <div class="settingsPlusButton">+</div>
+                        <div class="settingsDropinFileSystemButton">
+                            Adicionar mods<span id="settingsDropinRefreshNote">(Use F5 para reiniciar)</span>
+                        </div>
+                    </button>
+                    <div id="settingsDropinModsContent">
+                        
+                    </div>
+                </div>
+                <div id="settingsShadersContainer">
+                    <div class="settingsModsHeader">Pacotes de sombras</div>
+                    <div id="settingsShaderpackDesc">Enable or disable shaders. Please note, shaders will only run smoothly on powerful setups. You may add custom packs here.</div>
+                    <div id="settingsShaderpackWrapper">
+                        <button id="settingsShaderpackButton"> + </button>
+                        <div class="settingsSelectContainer">
+                            <div class="settingsSelectSelected" id="settingsShadersSelected">Select Shaderpack</div>
+                            <div class="settingsSelectOptions" id="settingsShadersOptions" hidden>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="settingsTabJava" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText">CONFIGURAÇÕES DO JAVA</span>
+                <span class="settingsTabHeaderDesc">Gerencie a configuração do java (avançado)</span>
+            </div>
+            <div id="settingsMemoryContainer">
+                <div id="settingsMemoryTitle">Memória RAM</div>
+                <div id="settingsMemoryContent">
+                    <div id="settingsMemoryContentLeft">
+                        <div class="settingsMemoryContentItem">
+                            <span class="settingsMemoryHeader">Memória máxima</span>
+                            <div class="settingsMemoryActionContainer">
+                                <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM" min="3" max="8" value="3" step="0.5">
+                                    <div class="rangeSliderBar"></div>
+                                    <div class="rangeSliderTrack"></div>
+                                </div>
+                                <span id="settingsMaxRAMLabel" class="settingsMemoryLabel">3G</span>
+                            </div>
+                        </div>
+                        <div class="settingsMemoryContentItem">
+                            <span class="settingsMemoryHeader">Memória mínima</span>
+                            <div class="settingsMemoryActionContainer">
+                                <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM" min="3" max="8" value="3" step="0.5">
+                                    <div class="rangeSliderBar"></div>
+                                    <div class="rangeSliderTrack"></div>
+                                </div>
+                                <span id="settingsMinRAMLabel" class="settingsMemoryLabel">3G</span>
+                            </div>
+                        </div>
+                        <div id="settingsMemoryDesc">A memória RAM mínima recomendada é de 3 gigabytes. Definir os valores mínimo e máximo para o mesmo valor pode reduzir o lag.</div>
+                    </div>
+                    <div id="settingsMemoryContentRight">
+                        <div id="settingsMemoryStatus">
+                            <div class="settingsMemoryStatusContainer">
+                                <span class="settingsMemoryStatusTitle">Total</span>
+                                <span id="settingsMemoryTotal" class="settingsMemoryStatusValue">16G</span>
+                            </div>
+                            <div class="settingsMemoryStatusContainer">
+                                <span class="settingsMemoryStatusTitle">Disponível</span>
+                                <span id="settingsMemoryAvail" class="settingsMemoryStatusValue">7.3G</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settingsFileSelContainer">
+                <div class="settingsFileSelTitle">Java Executável</div>
+                <div class="settingsFileSelContent">
+                    <div id="settingsJavaExecDetails">Selecionado: Java 8 Update 172 (x64)</div>
+                    <div class="settingsFileSelActions">
+                        <div class="settingsFileSelIcon">
+                            <img style="width: 15px;height: 18px;" src="./assets/images/uploadarrow.png">
+                        </div>
+                        <button class="settingsFileSelButton" id="settingsJavaExecSel" dialogTitle="Selecione o executavel java" dialogDirectory="false">
+                            <input class="settingsFileSelVal" id="settingsJavaExecVal" type="text" value="null" cValue="JavaExecutable" disabled>
+                        </button>
+                    </div>
+                </div>
+                <div class="settingsFileSelDesc">O executavel Java é validado antes da inicialização do jogo. <br>O caminho deve terminar com bin<%= process.platform === 'win32' ? '\\javaw.exe' : '/java' %>. <br>Requer Java 8 x64.</div>
+            </div>
+            <div id="settingsJVMOptsContainer">
+                <div id="settingsJVMOptsTitle">Opções adicionais da JVM</div>
+                <div id="settingsJVMOptsContent">
+                    <input id="settingsJVMOptsVal" cValue="JVMOptions" type="text">
+                </div>
+                <div id="settingsJVMOptsDesc">Opções a serem fornecidas à JVM em tempo de execucação.<br> <em>-Xms</em> e <em>-Xmx</em> não devem ser utilizados.<br><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/<%= process.platform === 'win32' ? 'windows' : 'unix' %>/java.html"><u>Opções disponiveis para o Java 8</u></a>.</div>
+            </div>
+        </div>
+        <div id="settingsTabLauncher" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText">OPÇÕES DO INICIALIZADOR</span>
+                <span class="settingsTabHeaderDesc">Opções relacionadas ao próprio inicializador.</span>
+            </div>
+            <div class="settingsFieldContainer">
+                <div class="settingsFieldLeft">
+                    <div class="settingsCheckboxWrapper">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="AllowPrerelease">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                        <span class="settingsFieldTitle">Permitir atualizações de pré-lançamento.</span>
+                    </div>
+                    <span class="settingsFieldDesc">Pré-lançamentos incluem novos recursos que podem não ter sido totalmente testados ou integrados. Essa opção sempre estará ativada se você estiver usando uma versão de pré-lançamento.</span>
+                </div>
+            </div>
+            <div class="settingsFileSelContainer">
+                <div class="settingsFileSelContent">
+                    <div class="settingsFieldTitle" id="settingsDataDirTitle">Diretório de dados</div>
+                    <div class="settingsFileSelActions">
+                        <div class="settingsFileSelIcon">
+                            <img style="width: 15px;height: 18px;" src="./assets/images/uploadarrow.png">
+                        </div>
+                        <button class="settingsFileSelButton" dialogTitle="Select Data Directory" dialogDirectory="true">
+                            <input class="settingsFileSelVal" type="text" value="null" cValue="DataDirectory" disabled>
+                        </button>
+                    </div>
+                </div>
+                <div class="settingsFileSelDesc">Todos os arquivos do jogo e instalações locais do Java serão armazenados no diretório de dados. Capturas de tela e arquivos de mundos são armazenados na pasta de instância para a configuração do servidor correspondente.</div>
+            </div>
+        </div>
+        <div id="settingsTabAbout" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText">SOBRE</span>
+                <span class="settingsTabHeaderDesc">Visualize informações e notas de lançamento para a versão atual.</span>
+            </div>
+            <div id="settingsAboutCurrentContainer">
+                <div id="settingsAboutCurrentContentLogo">
+                    <img src="./assets/images/pixelmonbrasil.png">
+                </div>
+                <div id="settingsAboutCurrentContent">
+                    <div id="settingsAboutCurrentHeadline">
+                        <span id="settingsAboutTitle">Pixelmon Brasil</span>
+                    </div>
+                    <div id="settingsAboutCurrentVersion">
+                        <div id="settingsAboutCurrentVersionCheck">&#10003;</div>
+                        <div id="settingsAboutCurrentVersionDetails">
+                            <span id="settingsAboutCurrentVersionTitle">Stable Release</span>
+                            <div id="settingsAboutCurrentVersionLine">
+                                <span id="settingsAboutCurrentVersionText">Versão </span>
+                                <span id="settingsAboutCurrentVersionValue">0.0.1-alpha.12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="latestVersion">Você está executando a versão mais recente.</div>
+                    <div id="settingsAboutButtons">
+                        <a href="https://discord.gg/pxbr" id="settingsAboutSupportButton" class="settingsAboutButton">Suporte</a>
+                    </div>
+                </div>
+            </div>
+            <div class="settingsChangelogContainer">
+                <div class="changelogContainerBanner">
+                    <img src="./assets/images/banner.png">
+                </div>
+                <div class="settingsChangelogContent">
+                    <div class="settingsChangelogHeadline">
+                        <div class="settingsChangelogLabel">Notas de atualização</div>
+                        <div id="changeLogTittle" class="settingsChangelogTitle">Atualização 0.0.9 - Lorem Ipsum</div>
+                    </div>
+                    <div id="changeLogText" class="settingsChangelogText">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta mollis metus. Nullam maximus enim purus, et hendrerit est iaculis a. Duis vitae ullamcorper tortor. Suspendisse commodo mauris non dui luctus dictum. Proin vulputate sapien lobortis ipsum congue, convallis feugiat mauris maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse potenti. Proin in odio in nunc fringilla fermentum et nec lorem. Pellentesque faucibus quis metus a ultricies. Pellentesque facilisis at dui vitae bibendum. Nam laoreet tincidunt nisl, eget tempor erat hendrerit tempus. Ut eu dolor in magna venenatis auctor. Sed pretium finibus tellus, vitae vestibulum ante faucibus eu. Vestibulum dui diam, aliquam dignissim ultricies sed, pretium a odio. Sed a leo felis.
+
+Maecenas suscipit nunc elementum leo rhoncus elementum. Morbi dui dui, placerat sed lectus nec, porttitor pretium ligula. Fusce efficitur bibendum sem, in egestas purus dignissim nec. Fusce a maximus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur dictum felis et condimentum sagittis. Vivamus quis erat a massa faucibus egestas volutpat non nisi. Phasellus sit amet cursus est, at iaculis quam.
+
+Mauris diam tortor, laoreet a ultricies non, tempor vehicula dui. Ut aliquet libero eros, quis interdum dolor volutpat eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur nulla urna, fermentum scelerisque velit at, fermentum commodo ex. Etiam volutpat, purus non dapibus volutpat, ex felis aliquet augue, eget rhoncus quam lectus non mauris. Fusce ac augue elementum, iaculis arcu non, scelerisque velit. Sed pellentesque dapibus massa quis ultricies. Proin at egestas magna, vitae porta nibh.
+
+Ut interdum volutpat facilisis. Sed diam diam, vestibulum eu varius quis, auctor vitae purus. In accumsan, est efficitur maximus rutrum, magna velit gravida lectus, ut semper ante tortor in eros. Nulla ut metus laoreet, tempus nisi eget, dignissim nunc. Pellentesque sollicitudin nisl sed leo iaculis, a tincidunt mi elementum. In ante eros, congue ac dui sed, elementum euismod velit. Vestibulum et imperdiet ex, eget auctor est. Maecenas eu imperdiet felis. Sed vitae rhoncus augue, quis cursus purus.
+
+Vivamus rutrum quam et quam vestibulum euismod blandit non urna. Sed hendrerit consequat ipsum, et efficitur urna egestas at. Aenean a velit non mauris pharetra fringilla. Vestibulum dictum fringilla arcu. Fusce ut lectus diam. Nullam non felis nibh. Nulla facilisi. Duis dapibus nulla vitae orci sodales dictum.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText">ATUALIZAÇÕES DO INICIALIZADOR</span>
+                <span class="settingsTabHeaderDesc">Baixe, instale e revise as atualizações do inicializador.</span>
+            </div>
+            <div id="settingsUpdateStatusContainer">
+                <div id="settingsAboutCurrentContentLogo">
+                    <img src="./assets/images/pixelmonbrasil.png">
+                </div>
+                <div id="settingsUpdateStatusContent">
+                    <div>Pixelmon Brasil</div>
+                    <div id="settingsUpdateVersion">
+                        <div id="settingsUpdateVersionCheck">&#10003;</div>
+                        <div id="settingsUpdateVersionDetails">
+                            <span id="settingsUpdateVersionTitle">Stable Release</span>
+                            <div id="settingsUpdateVersionLine">
+                                <span id="settingsUpdateVersionText">Versão </span>
+                                <span id="settingsUpdateVersionValue">0.0.1-alpha.18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settingsUpdateStatusHeadline">
+                        <span id="settingsUpdateTitle">Você está executando a versão mais recente.</span>
+                    </div>
+                    <div id="settingsUpdateActionContainer">
+                        <button id="settingsUpdateActionButton">Checar atualizações</button>
+                    </div>
+                </div>
+            </div>
+            <div class="settingsChangelogContainer" style="display: none;">
+                <div class="changelogContainerBanner"></div>
+                <div class="settingsChangelogContent">
+                    <div class="settingsChangelogHeadline">
+                        <div class="settingsChangelogLabel">Notas de atualização</div>
+                        <div class="settingsChangelogTitle">Atualização 0.0.9 - Lorem Ipsum</div>
+                    </div>
+                    <div class="settingsChangelogText">
+                        No Release Notes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/scripts/settings.js"></script>
+</div>

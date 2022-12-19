@@ -1,0 +1,93 @@
+<style>
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    padding: 10px;
+    background-color: #0c0c0c;
+    column-gap: 5px;
+}
+
+.logs {
+    display: flex;
+    height: 100%;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    overflow: auto;
+}
+
+#logContainer {
+    height: 100%;
+    width: 100%;
+    font-size: 0.85rem;
+}
+
+.button {
+  all: unset;
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  padding: 2px 8px 2px 6px;
+  color: #000000;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+</style>
+
+<div class="body">
+    <div class="logs">
+        <div id="logContainer">
+            ...
+        </div>
+    </div>
+    <div class="actions">
+        <a class="button" id="saveFile" href="#" download=""><span>Salvar Arquivo</span></a>
+        <button class="button" id="copy">Copiar Logs</button>
+        <button class="button" id="close">Fechar</button>
+    </div>
+</div>
+
+<script>
+    const logContainer = document.getElementById('logContainer');
+    const copyButton = document.getElementById('copy');
+    const closeButton = document.getElementById('close');
+    const saveFileButton = document.getElementById('saveFile');
+
+    closeButton.addEventListener('click', () => {
+        this.window.close();
+    });
+
+    copyButton.addEventListener('click', copyLogs)
+    function copyLogs() {
+        navigator.clipboard.writeText(logContainer.innerText);
+    }
+
+    function generateFile() {
+        const data = new Blob([logContainer.innerText], { type: 'text/plain'});
+        return window.URL.createObjectURL(data);
+    }
+
+    function setLogs(data) {
+        logContainer.innerText = data;
+        saveFileButton.href = generateFile();
+    }
+</script>

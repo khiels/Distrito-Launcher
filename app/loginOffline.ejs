@@ -1,0 +1,28 @@
+<div id="loginOfflineContainer" style="display: none;">
+    <div id="loginOfflineCancelContainer">
+        <button id="loginOfflineCancelButton">
+            <div id="loginCancelIcon">X</div>
+            <span id="loginCancelText">Cancelar</span>
+        </button>
+    </div>
+    <div class="loginOfflineContent">
+        <span id="loginSubheader">MINECRAFT LOGIN</span>
+        <div class="loginFieldContainer">
+            <span class="loginErrorSpan" id="loginOfflineNameError">* Nome de usuário inválido</span>
+            <input id="loginOfflineUsername" class="loginField" type="text" placeholder="Nome de usuário">
+        </div>
+        <button id="loginOfflineConfirm" class="loginButton" disabled>
+                <div id="loginButtonContent">
+                INICIAR SESSÃO
+            </div>
+        </button>
+        <div class="loginOptions">
+            <label id="checkmarkContainer">
+                <input id="loginRememberOption" type="checkbox" checked>
+                <span id="loginRememberText" class="loginSpanDim">Manter-se conectado?</span>
+                <span class="loginCheckmark"></span>
+            </label>
+        </div>
+        <script src="./assets/js/scripts/loginOffline.js"></script>
+    </div>
+</div>
