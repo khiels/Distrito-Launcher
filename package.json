@@ -1,50 +1,50 @@
 {
-  "name": "pixelmonblast",
-  "version": "1.0.0",
-  "productName": "Pixelmon Blast",
-  "description": "Launcher do melhor servidor de pixelmon do Brasil!",
-  "license": "UNLICENSED",
-  "homepage": "https://pixelmonblast.com.br",
-  "private": true,
-  "main": "index.js",
-  "scripts": {
-    "start": "electron .",
-    "dist": "electron-builder build",
-    "dist:win": "npm run dist -- -w",
-    "dist:mac": "npm run dist -- -m",
-    "dist:linux": "npm run dist -- -l",
-    "lint": "eslint --config .eslintrc.json ."
-  },
-  "engines": {
-    "node": "16.x.x"
-  },
-  "dependencies": {
-    "@coreui/icons": "^2.1.0",
-    "@electron/remote": "^2.0.8",
-    "adm-zip": "^0.5.9",
-    "async": "^3.2.3",
-    "bootstrap": "^5.2.0",
-    "discord-rpc-patch": "^4.0.1",
-    "ejs": "^3.1.8",
-    "ejs-electron": "^2.1.1",
-    "electron-updater": "^5.0.1",
-    "fs-extra": "^10.1.0",
-    "github-syntax-dark": "^0.5.0",
-    "got": "^11.8.3",
-    "helios-core": "~0.1.0",
-    "jquery": "^3.6.0",
-    "node-stream-zip": "^1.15.0",
-    "request": "^2.88.2",
-    "semver": "^7.3.7",
-    "tar-fs": "^2.1.1",
-    "uikit": "^3.15.5",
-    "winreg": "^1.2.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dscalzi/HeliosLauncher.git"
-  },
-  "devDependencies": {
-    "electron": "^22.0.0"
-  }
+ "name": "pixelmonblast",
+ "version": "1.0.0",
+ "productName": "Pixelmon Blast",
+ "description": "Launcher do melhor servidor de pixelmon do Brasil!",
+ "license": "UNLICENSED",
+ "homepage": "https://pixelmonblast.com.br",
+ "private": true,
+ "main": "index.js",
+ "scripts": {
+  "start": "electron .",
+  "dist": "electron-builder build",
+  "dist:win": "npm run dist -- -w",
+  "dist:mac": "npm run dist -- -m",
+  "dist:linux": "npm run dist -- -l",
+  "lint": "eslint --config .eslintrc.json ."
+ },
+ "engines": {
+  "node": "16.x.x"
+ },
+ "dependencies": {
+  "@coreui/icons": "^2.1.0",
+  "@electron/remote": "^2.0.8",
+  "adm-zip": "^0.5.9",
+  "async": "^3.2.3",
+  "bootstrap": "^5.2.0",
+  "discord-rpc-patch": "^4.0.1",
+  "ejs": "^3.1.8",
+  "ejs-electron": "^2.1.1",
+  "electron-updater": "^5.0.1",
+  "fs-extra": "^10.1.0",
+  "github-syntax-dark": "^0.5.0",
+  "got": "^11.8.3",
+  "helios-core": "~0.1.0",
+  "jquery": "^3.6.0",
+  "node-stream-zip": "^1.15.0",
+  "request": "^2.88.2",
+  "semver": "^7.3.7",
+  "tar-fs": "^2.1.1",
+  "uikit": "^3.15.5",
+  "winreg": "^1.2.4"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Ezequieel/LAUNCHER-PIXELMON-BLAST.git"
+ },
+ "devDependencies": {
+  "electron": "^22.0.0"
+ }
 }
