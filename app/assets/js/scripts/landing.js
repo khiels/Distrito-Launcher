@@ -769,39 +769,3 @@ function showSlide(index) {
 
     return index
 }
-async function loadNewsJson() {
-    try {
-        const headers = new Headers()
-        headers.append('cache-control', 'no-cache')
-        headers.append('pragma', 'no-cache')
-
-        const options = { 
-            method: 'GET',
-            headers: headers,
-        }
-
-        const data = await fetch('https://launcher.pixelmonbrasil.com.br/news.json', options)
-        const news = await data.json()
-
-        news_slider.innerHTML=''
-
-        for(const value of news) {
-            let readMore = ''
-            if(value.link)
-                readMore = `<a class="readmore" href="${value.link}">Ver mais...</a>`
-
-            news_slider.innerHTML += `
-                <div class="slider_item" style="display: none">
-                    <div class="slideshowHeading">${value.title}</div>
-                    <div class="slideshowContent">${value.description}</div>
-                    <img class="newsImage" src="${value.imageURL || './assets/images/render2.png'}">
-                    ${readMore}
-                </div>
-            `
-        }
-        currentSlideIndex = showSlide(0)
-    }
-    catch(e) {
-        console.log('A problem occurred trying to fetch news')
-    }
-}
