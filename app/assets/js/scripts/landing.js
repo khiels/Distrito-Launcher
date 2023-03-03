@@ -278,7 +278,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
     
     sysAEx.on('message', (m) => {
 
-        if(m.context === 'validateJava'){
+        if(m.context === 'validateDefaultJava'){
             if(m.result == null){
                 // If the result is null, no valid Java installation was found.
                 // Show this information to the user.
@@ -344,7 +344,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
                 // Oracle JRE enqueue failed. Probably due to a change in their website format.
                 // User will have to follow the guide to install Java.
                 setOverlayContent(
-                    'Erro inesperado:<br>Downloado do JAVA falhou.',
+                    'Erro inesperado:<br>Download do JAVA falhou.',
                     'Infelizmente não conseguimos instalar o java, será necessário realizar uma instalação manual.',
                     'Entendi'
                 )
@@ -417,7 +417,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
 
     // Begin system Java scan.
     setLaunchDetails('Checando informações do sistema..')
-    sysAEx.send({task: 'execute', function: 'validateJava', argsArr: [ConfigManager.getDataDirectory()]})
+    sysAEx.send({task: 'execute', function: 'validateDefaultJava', argsArr: []})
 
 }
 
@@ -768,4 +768,40 @@ function showSlide(index) {
     }
 
     return index
+}
+async function loadNewsJson() {
+    try {
+        const headers = new Headers()
+        headers.append('cache-control', 'no-cache')
+        headers.append('pragma', 'no-cache')
+
+        const options = { 
+            method: 'GET',
+            headers: headers,
+        }
+
+        const data = await fetch('https://gist.githubusercontent.com/Ezequieel/8a3e8723d9215d6c749eb2af35f2b3ca/raw/a89a51699e883a5918be215b6b1c294c1bae7e79/distritopixelmon.json', options)
+        const news = await data.json()
+
+        news_slider.innerHTML=''
+
+        for(const value of news) {
+            let readMore = ''
+            if(value.link)
+                readMore = `<a class="readmore" href="${value.link}">Ver mais...</a>`
+
+            news_slider.innerHTML += `
+                <div class="slider_item" style="display: none">
+                    <div class="slideshowHeading">${value.title}</div>
+                    <div class="slideshowContent">${value.description}</div>
+                    <img class="newsImage" src="${value.imageURL || './assets/images/render2.png'}">
+                    ${readMore}
+                </div>
+            `
+        }
+        currentSlideIndex = showSlide(0)
+    }
+    catch(e) {
+        console.log('A problem occurred trying to fetch news')
+    }
 }

@@ -1,1 +1,1 @@
-<h1 align="center">Pixelmon Blash</h1>
+<h1 align="center">Distrito Pixelmon</h1>

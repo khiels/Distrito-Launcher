@@ -1,4 +1,3 @@
-// Work in progress
 const logger = require('./loggerutil')('%c[DiscordWrapper]', 'color: #7289da; font-weight: bold')
 
 const { Client } = require('discord-rpc-patch')
@@ -8,33 +7,33 @@ let activity
 
 exports.initRPC = function(playerName){
     client = new Client({ transport: 'ipc' })
-    const clientId = '490193730033287168'
+    const clientId = '792162609746411540'
 
     activity = {
         details: 'Jogando Online',
         state: `Treinador: ${playerName}`,
-        largeImageKey: 'pxbr1',
-        largeImageText: 'Pixelmon Brasil',
-        smallImageKey: 'pxbr2',
-        smallImageText: 'Versão 8.3.8',
+        largeImageKey: 'dist1',
+        largeImageText: 'Distrito Pixelmon',
+        smallImageKey: 'dist2',
+        smallImageText: 'Versão 8.4.3',
         startTimestamp: new Date().getTime(),
         instance: false,
         buttons: [
-            { label: 'Discord', url: 'https://discord.com/invite/pxbr'},
-            { label: 'Jogue Agora', url: 'https://www.pixelmonbrasil.com.br/download'}
+            { label: 'Discord', url: 'https://discord.gg/Tjt5vXNn'},
+            { label: 'Jogue Agora', url: 'https://www.distritopixelmon.com/download'}
         ]
     }
 
     client.on('ready', () => {
-        logger.log('Discord RPC Connected')
+        logger.log('Discord RPC Conectado')
         client.setActivity(activity)
     })
     
     client.login({clientId: clientId}).catch(error => {
         if(error.message.includes('ENOENT')) {
-            logger.log('Unable to initialize Discord Rich Presence, no client detected.')
+            logger.log('Incapaz de inicializar o RPC, nenhum cliente detectado.')
         } else {
-            logger.log('Unable to initialize Discord Rich Presence: ' + error.message, error)
+            logger.log('Incapaz de inicializar o RPC: ' + error.message, error)
         }
     })
 }

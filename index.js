@@ -11,7 +11,6 @@ const path                              = require('path')
 const semver                            = require('semver')
 const { pathToFileURL }                 = require('url')
 const { AZURE_CLIENT_ID, MSFT_OPCODE, MSFT_REPLY_TYPE, MSFT_ERROR, SHELL_OPCODE } = require('./app/assets/js/ipcconstants')
-
 // Setup auto updater.
 function initAutoUpdater(event, data) {
 

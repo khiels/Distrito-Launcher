@@ -1,10 +1,10 @@
 {
- "name": "pixelmonblast",
+ "name": "distritopixelmon",
  "version": "1.0.0",
- "productName": "Pixelmon Blast",
+ "productName": "Distrito Pixelmon",
  "description": "Launcher do melhor servidor de pixelmon do Brasil!",
  "license": "UNLICENSED",
- "homepage": "https://pixelmonblast.com.br",
+ "homepage": "https://distritopixelmon.com",
  "private": true,
  "main": "index.js",
  "scripts": {

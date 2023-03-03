@@ -84,6 +84,11 @@ button {
     background-size: cover;
 }*/
 
+#fundo{
+    background: center fixed;
+    background-size: cover;
+}
+
 /*******************************************************************************
  *                                                                             *
  * Frame Styles (frame.ejs)                                                    *
@@ -355,7 +360,7 @@ button {
 }
 #welcomeButton:hover,
 #welcomeButton:focus {
- opacity: 0.7;
+    transform: scale(1.1);
  outline: none;
 }
 #welcomeButton:active {
@@ -1087,15 +1092,26 @@ button {
  position: relative;
 }
 
+#logo {
+    border-radius: 3px;
+    position: relative;
+   }
+
 .loginOptionsMainContent {
  display: flex;
  flex-direction: column;
  align-items: center;
 }
 
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
 .loginOptionsText {
  font-family: 'Montserrat Extra Bold';
- font-size: 1.6em;
+ font-size: 1.30em;
  margin-bottom: 10%;
 }
 
@@ -2788,15 +2804,11 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 #news_slider {
- height: 200px;
- margin-top: 15%;
 }
 
 .sliderContainer {
  display: flex;
  flex-direction: column;
- height: 100%;
- width: 55%;
 }
 
 .slideshowDescription {
@@ -2817,12 +2829,13 @@ input:checked + .toggleSwitchSlider:before {
 }
 
 .slideshowContent {
- color: #ffffffe0;
- font-family: 'Montserrat Medium';
- display: flex;
- flex-direction: column;
- height: 100%;
- z-index: 5;
+    color: #ffffffe0;
+    font-family: 'Montserrat Medium';
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 16px;
+    z-index: 5;
 }
 
 .slideItems {
@@ -2836,21 +2849,22 @@ input:checked + .toggleSwitchSlider:before {
 
 .slideshowHeading {
  font-family: 'Montserrat Extra Bold';
- font-size: 45px;
+ font-size: 46px;
  z-index: 5;
 }
 
 #newsContentContainer {
- display: flex;
- flex-direction: column;
- align-items: flex-start;
- box-sizing: border-box;
- gap: 30px;
-margin-top: 14px;
- height: 100%;
- width: 100%;
-
- padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    gap: 20px;
+    margin-top: 14px;
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 390px;
+    height: 100%;
+    width: 100%;
 }
 
 #newsContentContainer > .description {
@@ -2891,7 +2905,7 @@ margin-top: 14px;
 }
 
 .mediaContainer {
- margin-top: 70px;
+ margin-top: 124px;
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -2928,16 +2942,49 @@ margin-top: 14px;
 }
 
 .playButton {
- background: none;
- border: none;
- padding: 14px 72px;
-margin-bottom: 140px;
- align-items: center;
- cursor: pointer;
- position: relative;
- transition: 0.5s ease;
- background-color: #fff;
- border-radius: 18px;
+    background: none;
+    border: none;
+    padding: 12px 75px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s ease;
+    background-color: #fff;
+    border-radius: 18px;
+}
+
+.playContainer {
+padding-bottom: 500px;
+}
+
+/* .hawk {
+    position: fixed;
+    top: 275px;
+    left: 750px;
+} */
+
+/* .mascoteContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: baseline;
+        position: absolute;
+        gap: 2rem;
+} */
+
+.hawk2 {
+    position: fixed;
+    top: 365px;
+    left: 820px;
+}
+
+.mascote2Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
+    position: absolute;
+    gap: 2rem;
 }
 
 .playButton:hover,
@@ -2962,7 +3009,8 @@ margin-bottom: 140px;
  transition: background 2s ease;
  overflow-y: hidden;
 
- background: url('../images/backgrounds/8.jpg');
+ /* background: url('../images/backgrounds/8.jpg'); */
+ background-color: #0c0c0c;
  background-size: cover;
  background-position: center;
 }
