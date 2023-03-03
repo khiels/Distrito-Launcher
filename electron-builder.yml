@@ -1,5 +1,5 @@
-appId: 'distritolauncher'
-productName: 'Distrito Launcher'
+appId: 'distritopixelmon'
+productName: 'Distrito Pixelmon'
 artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2022-2023 Distrito Pixelmon'
@@ -41,8 +41,8 @@ linux:
   target: 'AppImage'
   maintainer: 'Ezequiel Souza'
   vendor: 'Ezequiel Souza'
-  synopsis: 'Launcher Distrito Pixelmon'
-  description: 'Launcher próprio para facilitar a jogatina no servidor do Distrito.'
+  synopsis: 'Launcher do Distrito Pixelmon'
+  description: 'Launcher feito para facilitar a instalacao dos mods para jogar no Distrito'
   category: 'Game'
 
 

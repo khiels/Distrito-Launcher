@@ -780,7 +780,7 @@ async function loadNewsJson() {
             headers: headers,
         }
 
-        const data = await fetch('https://gist.githubusercontent.com/Ezequieel/8a3e8723d9215d6c749eb2af35f2b3ca/raw/a89a51699e883a5918be215b6b1c294c1bae7e79/distritopixelmon.json', options)
+        const data = await fetch('http://launcher.distritopixelmon.com/distritopixelmon.json', options)
         const news = await data.json()
 
         news_slider.innerHTML=''
