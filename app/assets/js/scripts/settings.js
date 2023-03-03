@@ -1439,7 +1439,7 @@ const settingsUpdateChangelogText  = document.getElementById('changeLogText')
  */
 async function populateReleaseNotes(){
     try {
-        const data = await fetch('https://api.github.com/repos/BVRPixelmon/Launcher-Releases/releases/latest')
+        const data = await fetch('https://api.github.com/repos/Distritos/Launcher-Releases/releases/latest')
         const releaseNotes = await data.json()
         settingsUpdateChangelogTitle.innerText = releaseNotes.name
         settingsUpdateChangelogText.innerHTML = releaseNotes.body
