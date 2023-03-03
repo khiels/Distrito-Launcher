@@ -278,7 +278,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
     
     sysAEx.on('message', (m) => {
 
-        if(m.context === 'validateDefaultJava'){
+        if(m.context === 'validateJava'){
             if(m.result == null){
                 // If the result is null, no valid Java installation was found.
                 // Show this information to the user.
@@ -417,7 +417,7 @@ function asyncSystemScan(mcVersion, launchAfter = true){
 
     // Begin system Java scan.
     setLaunchDetails('Checando informações do sistema..')
-    sysAEx.send({task: 'execute', function: 'validateDefaultJava', argsArr: []})
+    sysAEx.send({task: 'execute', function: 'validateJava', argsArr: []})
 
 }
 
